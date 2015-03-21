@@ -1,0 +1,21 @@
+{
+	"name": "pepakriz/nettutor",
+	"description": "Nettutor is sandbox for learning Nette framework by fun way",
+	"homepage": "https://github.com/pepakriz",
+	"type": "project",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Josef Kříž",
+			"homepage": "http://josef-kriz.cz"
+		}
+	],
+	"require": {
+		"php": ">= 5.5.0",
+		"nette/nette": "~2.3.0",
+		"dg/adminer-custom": "~1.6"
+	},
+	"require-dev": {
+		"nette/tester": "~1.3"
+	}
+}

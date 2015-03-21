@@ -26,3 +26,15 @@ Ověření:
 ```bash
 vendor/bin/tester tests/App/ContactPresenterTest.phpt
 ```
+
+
+II. Komponenta pro navigaci
+---------------------------
+
+Zadání: Vytvořte komponentu, která bude vypisovat strukturu webu s odkazy. Komponentu zaregistrujte do presenteru pod jménem `navigation`. Důležité je, aby se navigace zobrazovala jak na homepage, tak i na stránce kontaktů. Využijte HTML tagy ul, li, a.
+
+Ověření:
+
+```bash
+vendor/bin/tester tests/App/NavigationControlTest.phpt
+```

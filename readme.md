@@ -39,7 +39,21 @@ Ověření:
 vendor/bin/tester tests/App/NavigationControlTest.phpt
 ```
 
-III. Tabulka s výpisem a filtrací článků
+III. Komponenta kontaktních formulářů
+---------------------------
+
+Zadání:
+- Vytvořte komponentu, která bude zapouzdřovat kontaktní formuláře (ContactControl). Komponentu zaregistrujte do presenteru `Homepage` pod 
+jménem `contact`.
+- V komponentě vytvořte formulář `base` který bude umožňovat vyplnit `email` a `message` a navěště na ně odpovídající pravidla (`rule`)
+
+Ověření:
+
+```bash
+vendor/bin/tester tests/App/ContactControlTest.phpt
+```
+
+IV. Tabulka s výpisem a filtrací článků
 ----------------------------------------
 
 Zadání: Vytvořte stránku s URL `/articles`, která bude sloužit k výpisu a filtraci článků. Jako zdroj dat využijte třídu `App\Article\ArticleFacade`. Články vypište do tabulky - co článek, to řádek. Využijte HTML tagy `table`, `tbody`, `tr`, `td`, `thead`, `th`. Tabulce přidejte `class="articles"`. Pořadí sloupců musí být `ID`, `Autor`, `Titulek` a `Obsah`.

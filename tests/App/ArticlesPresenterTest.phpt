@@ -93,10 +93,18 @@ class ArticlesPresenterTest extends Tester\TestCase
 
 		$id = 0;
 		foreach ($articlesFacade->getArticlesByUserIdContains($author, $search) as $article) {
-			Assert::same($article->getId(), (string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[1]')[0]);
-			Assert::same((string) $article->getAuthor()->getName(), (string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[2]')[0]);
-			Assert::same((string) $article->getTitle(), (string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[3]')[0]);
-			Assert::same((string) $article->getContent(), (string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[4]')[0]);
+			if (getenv('TRAVIS')) {
+				Assert::same($article->getId(), utf8_decode((string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[1]')[0]));
+				Assert::same((string) $article->getAuthor()->getName(), utf8_decode((string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[2]')[0]));
+				Assert::same((string) $article->getTitle(), utf8_decode((string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[3]')[0]));
+				Assert::same((string) $article->getContent(), utf8_decode((string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[4]')[0]));
+
+			} else {
+				Assert::same($article->getId(), (string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[1]')[0]);
+				Assert::same((string) $article->getAuthor()->getName(), (string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[2]')[0]);
+				Assert::same((string) $article->getTitle(), (string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[3]')[0]);
+				Assert::same((string) $article->getContent(), (string) $dom->xpath('//table[contains(@class, "articles")]/tbody/tr[' . ($id + 1) . ']/td[4]')[0]);
+			}
 
 			$id++;
 		}

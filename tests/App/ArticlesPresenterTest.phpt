@@ -81,7 +81,7 @@ class ArticlesPresenterTest extends Tester\TestCase
 		Assert::type(Nette\Bridges\ApplicationLatte\Template::class, $response->getSource());
 
 		$html = (string) $response->getSource();
-		$html = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $html);
+		$html = preg_replace('#<script(.*?)>(.*?)</script>#s', '', $html);
 		$dom = Tester\DomQuery::fromHtml($html);
 
 		Assert::true($dom->has('table.articles'));

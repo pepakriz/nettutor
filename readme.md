@@ -38,3 +38,16 @@ Ověření:
 ```bash
 vendor/bin/tester tests/App/NavigationControlTest.phpt
 ```
+
+III. Tabulka s výpisem a filtrací článků
+----------------------------------------
+
+Zadání: Vytvořte stránku s URL `/articles`, která bude sloužit k výpisu a filtraci článků. Jako zdroj dat využijte třídu `App\Article\ArticleFacade`. Články vypište do tabulky - co článek, to řádek. Využijte HTML tagy `table`, `tbody`, `tr`, `td`, `thead`, `th`. Tabulce přidejte `class="articles"`. Pořadí sloupců musí být `ID`, `Autor`, `Titulek` a `Obsah`.
+
+Nad tabulkou vytvořte formulář pro nastavení kritérií filtrace `search` a `author`. Stránka si musí nastavení filtru pamatovat tím, že si aktuální stav bude posílat pomocí `GET` parametrů `search` a `author`.
+
+Ověření:
+
+```bash
+vendor/bin/tester tests/App/ArticlesPresenterTest.phpt
+```

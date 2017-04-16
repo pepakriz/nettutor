@@ -2,6 +2,7 @@
 
 namespace App\Presenters;
 
+use App\Components\NavigationControl;
 use Nette,
 	App\Model;
 
@@ -11,5 +12,10 @@ use Nette,
  */
 abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
+
+	public function createComponentNavigation()
+	{
+		return new NavigationControl();
+	}
 
 }

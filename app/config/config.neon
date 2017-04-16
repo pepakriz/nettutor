@@ -22,4 +22,5 @@ session:
 services:
 	- App\Model\UserManager
 	- App\Forms\SignFormFactory
+	- App\Article\ArticleFacade
 	router: App\RouterFactory::createRouter

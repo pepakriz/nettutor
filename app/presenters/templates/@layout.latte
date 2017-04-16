@@ -18,6 +18,8 @@
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
+	{control navigation}
+
 	{include content}
 
 	{block scripts}
